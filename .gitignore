@@ -1,0 +1,23 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies and build outputs
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local tooling
+.DS_Store
+.idea/
+.vscode/
