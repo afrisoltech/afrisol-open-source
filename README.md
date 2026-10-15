@@ -16,7 +16,18 @@ Afrisol Technologies develops and supports technology initiatives intended to he
 
 ## Getting started
 
-This repository is an early-stage community foundation. See [ROADMAP.md](ROADMAP.md) for planned work. There are **no published production-ready software packages here yet**. Open an issue to propose a small reusable tool, tutorial or example. Follow [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
+This repository is an early-stage community foundation. See [ROADMAP.md](ROADMAP.md) for planned work. The repository includes an **experimental Python localization starter**, with no claim of production readiness or published package-registry distribution. Open an issue to propose a small reusable tool, tutorial or example. Follow [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
+
+## Python localization starter
+
+The independent `afrisol_open_source` Python module demonstrates simple language-tag normalization and language fallback for multilingual applications. It currently recognizes English, Swahili, French, Arabic and Portuguese base-language codes. This is not a translation engine or a full BCP-47 parser.
+
+```bash
+python -m pip install -e .
+python -m unittest discover -s tests -v
+```
+
+See [examples/README.md](examples/README.md) for a minimal example. Test results should be verified against the current GitHub Actions run before treating the package as release-ready.
 
 ## Community and governance
 
