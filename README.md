@@ -1,6 +1,8 @@
 # Afrisol Technologies — Open Source
 
-**Africa-focused technology innovation.** Building Technology for Africa, Creating Opportunities for the World.
+**Empowering Africa Through Technology.**
+
+*African Innovation. Global Impact.*
 
 Afrisol Technologies develops and supports technology initiatives intended to help African developers, startups, students, researchers, businesses and institutions participate in the digital economy. This public repository is a home for **independently developed open source** resources and community collaboration.
 
