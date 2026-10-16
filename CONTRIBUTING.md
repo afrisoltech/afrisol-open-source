@@ -17,3 +17,7 @@ Maintainers review correctness, security, accessibility, licensing, relevance to
 ## Sponsorship
 
 Support independent open source work at https://github.com/sponsors/afrisoltech. Sponsorship does not confer privileged access to private customer systems or guarantee roadmap priority.
+
+## Shared components and upstream fixes
+
+See [the shared-component programme](docs/SHARED_COMPONENTS.md). Include synthetic regression tests and redistribution provenance. Never paste private downstream code or logs into a public issue or PR. Run `python scripts/public_boundary.py` and the unit suite before review. Automated checks cannot substitute for human disclosure and licensing review.
