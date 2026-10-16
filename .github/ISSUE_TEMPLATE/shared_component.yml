@@ -1,0 +1,34 @@
+name: Shared component proposal
+description: Propose a reusable utility or a sanitized upstream improvement.
+title: '[Component] '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Public problem and expected behavior
+      description: Use synthetic examples. Never include private application URLs, records, logs or code.
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: Source and redistribution rights
+      description: Identify independently authored or appropriately licensed source and dependencies.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance tests and compatibility
+      description: Include supported versions, accessibility, localization and low-bandwidth needs.
+    validations:
+      required: true
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Publication boundary
+      options:
+        - label: This proposal contains no private APOS code, customer data, credentials or restricted supplier material.
+          required: true
+        - label: I have the right to submit this contribution under the repository license.
+          required: true

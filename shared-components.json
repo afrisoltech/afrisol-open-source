@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "components": {
+    "localization": {
+      "license": "MIT",
+      "runtime": "Python >=3.10",
+      "files": ["LICENSE", "src/afrisol_open_source/__init__.py", "src/afrisol_open_source/localization.py"],
+      "compatibility": "Simple language tags only; not full BCP-47 or a translation engine.",
+      "downstream_mode": "reviewed versioned dependency update"
+    }
+  },
+  "automatic_private_to_public_publication": false
+}
