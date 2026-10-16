@@ -1,0 +1,42 @@
+name: Create authorized v0.1.0 annotated tag
+on:
+  push:
+    branches: ['release/v0.1.0-annotated-tag']
+    paths: ['.github/workflows/tag-v0.1.0.yml']
+permissions:
+  contents: write
+concurrency: release-v0.1.0-tag
+jobs:
+  tag:
+    if: github.repository == 'afrisoltech/afrisol-open-source'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 7d6330b15131ea70a02c23cc3887c59fef9744c6
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify pinned source and test
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = 7d6330b15131ea70a02c23cc3887c59fef9744c6
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = 7d6330b15131ea70a02c23cc3887c59fef9744c6
+          python -m pip install --no-deps -e .
+          python -m unittest discover -s tests -v
+          python -m compileall -q src tests
+      - name: Create annotated tag without replacing existing refs
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code origin refs/tags/v0.1.0; then
+            echo 'Tag already exists; refusing to overwrite.'
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a v0.1.0 7d6330b15131ea70a02c23cc3887c59fef9744c6 -m "Afrisol Open Source v0.1.0: tested localization utilities and public community baseline. Authorized by issue #3."
+          test "$(git cat-file -t refs/tags/v0.1.0)" = tag
+          test "$(git rev-parse v0.1.0^{commit})" = 7d6330b15131ea70a02c23cc3887c59fef9744c6
+          git push origin refs/tags/v0.1.0
