@@ -8,6 +8,9 @@ class LocalizationTests(unittest.TestCase):
         self.assertEqual(normalize_language_tag("SW-ke"), "sw-KE")
         self.assertEqual(normalize_language_tag("EN"), "en")
 
+    def test_numeric_region_code(self):
+        self.assertEqual(normalize_language_tag("pt-001"), "pt-001")
+
     def test_supported_languages(self):
         self.assertEqual(supported_language("sw-KE"), "sw")
         self.assertEqual(supported_language("de-DE"), "en")
